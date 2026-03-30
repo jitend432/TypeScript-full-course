@@ -1,3 +1,19 @@
+/*
+
+1 - Function Declaration  -->  Regular function
+2 - function expression
+3 - Arrow function
+4 - Optional parameters
+5 - Default Parameter
+6 - Rest Parameters
+7 - Function with Return Type
+8 - Void Function
+9 - Function Type (Type Alias / Interface)
+10 - Callback Function
+11 - Generic Function
+
+*/
+
 // Regular function
 function add (a:number, b:number):number {
     return a+b;
@@ -5,7 +21,7 @@ function add (a:number, b:number):number {
 console.log("Add result =>",add(5,7))
 
 
-// Anonymous function expression
+// function expression
 const result = function (c:number, d:number) :number {
     return c*d
 }
@@ -33,6 +49,11 @@ function he (x:number, y:number = 5) : number {
     return x*y;
 }
 console.log(he(4))
+
+//Rest Parameters
+function sum(...numbers: number[]): number {
+  return numbers.reduce((a, b) => a + b);
+}
 
 
 
