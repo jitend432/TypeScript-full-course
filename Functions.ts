@@ -1,4 +1,5 @@
 /*
+All typescript functions
 
 1 - Function Declaration  -->  Regular function
 2 - function expression
@@ -51,20 +52,36 @@ function he (x:number, y:number = 5) : number {
 console.log(he(4))
 
 //Rest Parameters
-function sum(...numbers: number[]): number {
-  return numbers.reduce((a, b) => a + b);
+function sum(...num: number[]): number {
+  return num.reduce((a, b) => a + b);
 }
+console.log(sum(4,7,8,5,9,6,2,1,4,7))
+
+// Function with Return Type
+function multiply(a: number, b: number): number {
+  return a * b;
+}
+console.log(multiply(87,9));
+
+// Void Function
+function logMessage(msg: string): void {
+  console.log(msg);
+}
+logMessage("How are you")
 
 
-
-//function type
-type operation =(v:number, m:number)=> number;
+// Function Type (Type Alias / Interface)
+type operation = (v:number, m:number) => number;
 const addd:operation =(v,m)=> {
    return v*m;
 }
 console.log("addd",addd(5,8))
 
-
+// Callback Function
+function process(num: number, callback: (x: number) => number) {
+  return callback(num);
+}
+console.log(process(10, (x) => x + 5));
 
 // Generic Function
 function good<T> (n:T):T {
