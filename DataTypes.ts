@@ -54,9 +54,9 @@ Record<K, T>
 
 Reusable types banane ke liye:
 
-function getFirst<T>(arr: T[]): T {
-  return arr[0];
-}
+    function getFirst<T>(arr: T[]): T {
+      return arr[0];
+    }
 
 🔷 7. Type Assertions
 

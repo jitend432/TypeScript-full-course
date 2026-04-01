@@ -1,4 +1,14 @@
-//CONDITIONAL OPERATORS
+/*
+ CONDITIONAL OPERATORS =>
+
+  1. if / else if / else
+  2. Ternary Operator ? : =>  Nested ternary
+  3. switch / case
+  4. Nullish Coalescing ??
+  5. Optional Chaining ?.
+  6. Logical Operators && || !
+
+*/
 
 //  1. if / else if / else
 let age:number = 75;
@@ -12,7 +22,7 @@ if(age<=18) {
 
 // 2. Ternary Operator ? :
 let agee: number = 75;
-let output: string = age>=18 ? "Adult" : "Minor";
+let output: string = agee>=18 ? "Adult" : "Minor";
 console.log(output);
 
 
