@@ -11,9 +11,7 @@ undefined          Uninitialized variable           let x: undefined = undefined
 bigint             Large integers                   let big: bigint = 100n
 symbol             Unique identifiers               let sym: symbol = Symbol("id")
 
-🔷 2. Special Types
-
-Ye thode powerful / advanced behavior wale types hote hain:
+🔷 2. Special Types    ------>    Ye thode powerful / advanced behavior wale types hote hain:
 
 any         → kuch bhi assign kar sakte ho (avoid in interview 😄)
 unknown     → safer version of any
@@ -30,44 +28,41 @@ function   → function type
 Class
 Interface  
 
-🔷 4. Advanced Types
-
-TypeScript ki real power yahan hai 💪
+🔷 4. Advanced Types    ------>    TypeScript ki real power yahan hai 💪
 
 👉 Union Type            let value: string | number;
 👉 Intersection Type     type A = { name: string };    type B = { age: number };   type C = A & B;
 👉 Literal Types         let status: "success" | "error";
 👉 Type Alias            type User = { name: string; age: number };
 
-🔷 5. Utility Types (Built-in Helpers)
+🔷 5. Utility Types (Built-in Helpers) ---->  TypeScript me already bane hue helpers:
 
-TypeScript me already bane hue helpers:
+👉 Real project ka backbone
 
-Partial<T>
-Required<T>
-Readonly<T>
-Pick<T>
-Omit<T>
-Record<K, T>
+API banate time
+React props me
+Data filter karte time
 
-🔷 6. Generics
+Partial<T>      → optional
+Required<T>     → mandatory
+Readonly<T>     → select fields
+Pick<T>         → remove fields
+Omit<T>         → no change
+Record<K, T>    → dynamic object
 
-Reusable types banane ke liye:
+
+🔷 6. Generics   ----->   Reusable types banane ke liye:
 
     function getFirst<T>(arr: T[]): T {
       return arr[0];
     }
 
-🔷 7. Type Assertions
-
-Type ko manually batana:
+🔷 7. Type Assertions   --->   Type ko manually batana:
 
 let value: any = "hello";
 let length = (value as string).length;
 
-🔷 8. Type Inference
-
-TypeScript khud type guess kar leta hai:
+🔷 8. Type Inference    ----->    TypeScript khud type guess kar leta hai:
 
 let name = "Jitu"; // automatically string
 
@@ -106,3 +101,43 @@ function check(value: string | number) {
 }
 // 👇 force wrong input
 check(true as any);
+
+
+// Utility Types 
+type User = {
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+};
+
+// create
+function createUser(user: User) {
+  console.log("User created:", user);
+}
+
+// update
+function updateUser(id: number, data: Partial<User>) {
+  console.log("Updating user:", id, data);
+}
+
+// safe response
+type SafeUser = Omit<User, "password">;
+
+function getUser(): SafeUser {
+  return {
+    id: 1,
+    name: "Jitu",
+    email: "jitu@gmail.com",
+  };
+}
+
+// preview
+type PreviewUser = Pick<User, "name" | "email">;
+
+function getUserPreview(): PreviewUser {
+  return {
+    name: "Jitu",
+    email: "jitu@gmail.com",
+  };
+}
