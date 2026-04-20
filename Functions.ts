@@ -30,7 +30,7 @@ console.log("Multiply result =>",result(6,7))
 
 
 // Arrow function
-const mul =(f:number,g:number):number => {
+const mul = (f:number,g:number):number => {
       return f*g;
 }
 console.log(mul(3,5))

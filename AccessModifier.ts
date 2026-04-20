@@ -21,8 +21,8 @@ class Animal {
 }
 
 const a = new Animal("Dog");
-console.log(a.name);   // ✅ allowed
-a.speak();             // ✅ allowed
+console.log(a.name);   // ✅ allowed // output =>Dog
+a.speak();             // ✅ allowed  // output => Dog is speaking 
 
 
 // private -------------------------------------
@@ -48,9 +48,12 @@ class Animall {
 const boy = new Animall("Billa");
  console.log(boy.value);
 
+ boy.value = "Tom is private";   // ✅ allowed (uses setter)
+console.log(boy.value); // Tom
 
 
-// protected  ------------------------------------
+
+// protected  -------------------------------------
 class Animalll {
   protected name: string;
 
