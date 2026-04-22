@@ -153,4 +153,5 @@ function greet(user: Users): string {
   return `Hello ${user.name}, age is ${user.age}`;
 }
 
+
 console.log(greet({ name: "Jitu", age: 25 }));
